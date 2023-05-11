@@ -21,4 +21,9 @@ export class UserController {
   get(@Param('id') id: string): Promise<userEnptity[]> {
     return this.userService.get(Number(id));
   }
+
+  @Post('login')
+  signIn(@Body() user: any) {
+    return this.userService.signIn(user.email, user.password);
+  }
 }
