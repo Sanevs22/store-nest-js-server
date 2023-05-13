@@ -6,16 +6,7 @@ export class courseEnptity {
   id: number;
 
   @Column()
-  courseNum: number;
-
-  @Column()
   name: string;
-
-  @Column()
-  lessonNum: number;
-
-  @Column()
-  cardNum: number;
 
   @Column()
   cardType: string;

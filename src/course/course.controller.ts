@@ -7,18 +7,23 @@ import { Course } from './course.dto';
 export class CourseController {
   constructor(private readonly courseService: CourseService) {}
 
-  @Get()
+  // @Get()
+  // getAll(): Promise<courseEnptity[]> {
+  //   return this.courseService.getAll();
+  // }
+
+  @Post()
   getAll(): Promise<courseEnptity[]> {
     return this.courseService.getAll();
   }
 
-  @Get(':courseNum')
-  get(@Param('courseNum') courseNum: string): Promise<courseEnptity[]> {
-    return this.courseService.get(Number(courseNum));
-  }
+  // @Get(':courseNum')
+  // get(@Param('courseNum') courseNum: string): Promise<courseEnptity[]> {
+  //   return this.courseService.get(Number(courseNum));
+  // }
 
   @Post()
-  create(@Body() courses: Course[]): Promise<Course[]> {
+  create(@Body() courses: Course): Promise<Course[]> {
     return this.courseService.create(courses);
   }
 }

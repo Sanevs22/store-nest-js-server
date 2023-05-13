@@ -62,6 +62,7 @@ export class UserService {
     if (await bcrypt.compare(password, user.password)) {
       const payload = { email: email, role: user.role };
       return {
+        isLogin: 'true',
         access_token: await this.jwtService.sign(payload, {
           secret: 'qweqwe',
         }),
